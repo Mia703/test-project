@@ -1,0 +1,21 @@
+---
+// Component Script (JavaScript)
+import videoBG from '../assets/Leaves-While-Raining-Pexels-Klaus_id 5170597 (1080p).mp4'
+---
+<!-- Component Template (HTML & JS Expressions) -->
+<div class="video-component">
+	<video src={videoBG} autoplay loop muted />
+</div>
+
+<style>
+	.video-component {
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
