@@ -1,9 +1,13 @@
 ---
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
+
+import NavSection from '../components/nav.astro';
+import FooterSection from '../components/footer.astro';
 ---
 
 <!doctype html>
@@ -12,12 +16,16 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- TODO: change favicon -->
+		<link rel="icon" type="image/svg+xml" href="" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body id="main-grid">
+		<NavSection />
 		<slot />
+		<FooterSection />
 	</body>
 </html>
 
@@ -54,6 +62,12 @@ const { title } = Astro.props;
 	a {
 		color: var(--main-font-colour-white);
 		font-size: 1em;
+		transition: all 0.2s ease-in-out;
+	}
+
+	a:hover {
+		color: var(--accent-yellow);
+		transition: all 0.2s ease-in-out;
 	}
 
 	/* =================== constants =================== */
@@ -66,8 +80,5 @@ const { title } = Astro.props;
 	/* =================== media queries =================== */
 	/* =================== DESKTOP+ =================== */
 	@media only screen and (min-width: 64.063em) {
-		main {
-			grid-column: span 12;
-		}
 	}
 </style>
