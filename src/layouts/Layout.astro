@@ -6,8 +6,8 @@ interface Props {
 
 const { title, description } = Astro.props;
 
-import NavSection from '../components/nav.astro';
-import FooterSection from '../components/footer.astro';
+import NavSection from "../components/nav.astro";
+import FooterSection from "../components/footer.astro";
 ---
 
 <!doctype html>
@@ -32,14 +32,14 @@ import FooterSection from '../components/footer.astro';
 <style is:global>
 	/* =================== imported fonts =================== */
 	@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-	
+
 	/* ---------- sub-header ---------- */
 
 	/* =================== global variables =================== */
 	:root {
 		--main-bg-colour-black: #000000;
 		--main-font-colour-white: #ffffff;
-		--accent-yellow: #FFC600;
+		--accent-yellow: #ffc600;
 	}
 
 	/* =================== reset default styles =================== */
@@ -51,7 +51,7 @@ import FooterSection from '../components/footer.astro';
 
 	/* =================== base page styles =================== */
 	body {
-		font-family: 'Inter', sans-serif;
+		font-family: "Inter", sans-serif;
 		font-weight: 400;
 		font-size: 1em;
 		color: var(--main-font-colour-white);
@@ -59,9 +59,31 @@ import FooterSection from '../components/footer.astro';
 	}
 
 	/* =================== font styles =================== */
+	h1 {
+		font-size: 12em;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		font-size: 3em;
+		font-weight: 400;
+	}
+
+	h3 {
+		font-size: 2em;
+		font-weight: 400;
+	}
+
+	p {
+		font-size: 1em;
+		font-weight: 400;
+	}
+
 	a {
 		color: var(--main-font-colour-white);
 		font-size: 1em;
+		font-weight: 400;
 		transition: all 0.2s ease-in-out;
 	}
 
