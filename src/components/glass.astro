@@ -1,43 +1,51 @@
 ---
-
+import Navigation from "../components/nav.astro";
 ---
 
-<div class="glass-container">
-	<div class="glass">
-		<h2>
-			Hi! My name is Amya. I'm an art director and graphic designer based in New
-			York City working on branding, visual identities, editorial design, and
-			web design.
-		</h2>
-		<div class="links-container">
-			<a href="mailto:amya.nicole.moore@gmail.com">Contact me</a>
-		</div>
+<div class="glass">
+	<Navigation />
+	<h2 class="intro-header">
+		Hi! My name is Amya. I'm a junior front-end web developer based in Georgia
+		working on branding, visual identies, editorial design, and web design.
+	</h2>
+	<div class="links-container">
+		<a href="mailto:amya.nicole.moore@gmail.com">Contact me</a>
+		<a href="" target="_blank">Download My Resume</a>
+		<a href="https://read.cv/anmoore" target="_blank" rel="noopener noreferrer"
+			>Read.cv</a
+		>
 	</div>
 </div>
 
 <style>
-	.glass-container {
-		grid-column: 2 / 12;
-
-		height: 80vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
+	/* =================== constants =================== */
 	.glass {
-		width: 100%;
-		height: fit-content;
+		padding: 1rem;
 
-		background-color: rgba(255, 255, 255, 30%);
-		backdrop-filter: blur(6px);
-		border: 1px solid rgba(255, 255, 255, 16%);
 		border-radius: 20px;
-
-		padding: 2rem;
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		background-color: rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(6px);
 	}
 
-	.links-container {
-		margin: 1rem 0 0 0;
+	.intro-header {
+		margin: 2rem 0;
+	}
+
+	.links-container a:not(:last-child) {
+		margin-right: 1.5rem;
+	}
+
+	/* =================== media queries =================== */
+	/* =================== MOBILE =================== */
+	@media only screen and (max-width: 40em) {
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
 	}
 </style>

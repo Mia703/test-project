@@ -5,12 +5,12 @@ const nav_data = [
 	},
 	{
 		// TODO: link to Work section header
-		name: 'Work',
-		path: '',
+		name: 'Projects',
+		path: '#projects',
 	},
 	{
-		name: 'Profile',
-		path: '/profile/',
+		name: 'About',
+		path: '/about/',
 	},
 ]
 
