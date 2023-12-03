@@ -1,7 +1,7 @@
 const nav_data = [
 	{
 		name: 'Home',
-		path: '',
+		path: '/',
 	},
 	{
 		// TODO: link to Work section header
@@ -10,7 +10,7 @@ const nav_data = [
 	},
 	{
 		name: 'About',
-		path: '/about/',
+		path: '/about',
 	},
 ]
 
