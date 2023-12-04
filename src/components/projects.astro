@@ -1,5 +1,38 @@
 ---
+const response = await fetch(import.meta.env.STRAPI_URL);
+const { data } = await response.json();
 ---
+
 <section class="projects-section">
 	<h1 id="projects">Projects</h1>
+	{
+		data.map(
+			({
+				attributes: {
+					projectName,
+					projectDescription,
+					projectGitLink,
+					projectLiveLink,
+					projectImage,
+				},
+			}) => (
+				<>
+					<p>Name: {projectName}</p>
+					<p>Description: {projectDescription}</p>
+					<p>Git Link: {projectGitLink}</p>
+					<p>Live Link: {projectLiveLink}</p>
+					<img
+						src={`http://127.0.0.1:1337${projectImage.data.attributes.formats.large.url}`}
+						alt={projectImage.data.attributes.name}
+					/>
+				</>
+			)
+		)
+	}
 </section>
+
+<style>
+	.projects-section {
+		grid-column: span 12;
+	}
+</style>
