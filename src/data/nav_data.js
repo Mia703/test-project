@@ -4,7 +4,6 @@ const nav_data = [
 		path: '/',
 	},
 	{
-		// TODO: link to Work section header
 		name: 'Projects',
 		path: '#projects',
 	},
