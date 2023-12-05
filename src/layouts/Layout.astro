@@ -79,10 +79,13 @@ const { title, description } = Astro.props;
 	a {
 		color: var(--main-font-colour-white);
 		text-transform: uppercase;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
 		transition: all 0.2s ease-in-out;
 	}
 
 	a:hover {
+		border-bottom: 1px solid;
 		transition: all 0.2s ease-in-out;
 	}
 
