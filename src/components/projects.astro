@@ -1,5 +1,6 @@
 ---
 import PROJECT_DATA from "../data/project_data";
+import Lightbox from "./lightbox";
 ---
 
 <section class="projects-section">
@@ -12,9 +13,10 @@ import PROJECT_DATA from "../data/project_data";
 					<p>{item.projectDescription}</p>
 				</div>
 
-				<div class="project-img">
-					<img src={item.projectImage} />
-				</div>
+				<Lightbox
+					projectKey={item.id}
+					projectCollection={item.projectImageCollection}
+				/>
 
 				<div class="project-footer">
 					<a href={item.projectGitLink} target="_blank" rel="noopener noreferrer">GitHub</a>
