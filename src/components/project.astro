@@ -1,0 +1,98 @@
+---
+import PROJECT_DATA from "../data/project_data";
+import Lightbox from "./lightbox";
+---
+
+<section id="projects-section">
+	<h1 id="project-header">Projects</h1>
+	{
+		PROJECT_DATA.map((item) => (
+			<div class="project">
+				<div class="project-head">
+					<h3>{item.projectName}</h3>
+					<p>{item.projectDescription}</p>
+				</div>
+
+				<Lightbox
+					client:only="react"
+					projectKey={item.id}
+					projectCollection={item.projectImageCollection}
+				/>
+
+				<div class="project-footer">
+					<p class="hashtag">{item.projectHashTag}</p>
+					<div class="project-footer-links-container">
+						<a
+							href={item.projectGitLink}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							GitHub
+						</a>
+						<a
+							href={item.projectLiveLink}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Live Site
+						</a>
+					</div>
+				</div>
+			</div>
+		))
+	}
+</section>
+
+<style>
+	/* =================== constants =================== */
+	.project {
+		margin-bottom: 1rem;
+	}
+
+	.project-head {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.project-head p {
+		width: 45ch;
+	}
+
+	.project-footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: end;
+	}
+
+	.project-footer-links-container {
+		min-width: 10rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	/* =================== media queries =================== */
+	/* =================== MOBILE =================== */
+	@media only screen and (max-width: 40em) {
+		#projects-section {
+			grid-column: span 4;
+		}
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		#projects-section {
+			grid-column: span 6;
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		#projects-section {
+			grid-column: span 12;
+		}
+	}
+</style>

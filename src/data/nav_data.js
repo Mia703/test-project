@@ -5,7 +5,7 @@ const nav_data = [
 	},
 	{
 		name: 'Projects',
-		path: '#projects',
+		path: '#project-header',
 	},
 	{
 		name: 'About',
