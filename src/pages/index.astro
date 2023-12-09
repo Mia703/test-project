@@ -2,17 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 import VideoBG from "../components/video.astro";
 import Glass from "../components/glass.astro";
-import Projects from "../components/projects.astro";
+import Gradient from "../components/gradient.astro";
+import Projects from "../components/project.astro";
 ---
 
 <Layout title="Amya Moore" description="Amya's personal portfolio">
 	<div id="main-grid">
-		<div class="glass-container">
-			<Glass />
-		</div>
+		<Glass />
 		<Projects />
 	</div>
 	<VideoBG />
+	<Gradient />
 </Layout>
 
 <style>
@@ -23,24 +23,11 @@ import Projects from "../components/projects.astro";
 		padding: 1rem;
 	}
 
-	.glass-container {
-		max-width: 100%;
-		min-height: 100vh;
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
 	/* =================== media queries =================== */
 	/* =================== MOBILE =================== */
 	@media only screen and (max-width: 40em) {
 		#main-grid {
 			grid-template-columns: repeat(4, 1fr);
-		}
-
-		.glass-container {
-			grid-column: span 4;
 		}
 	}
 
@@ -49,20 +36,12 @@ import Projects from "../components/projects.astro";
 		#main-grid {
 			grid-template-columns: repeat(6, 1fr);
 		}
-
-		.glass-container {
-			grid-column: span 6;
-		}
 	}
 
 	/* =================== DESKTOP =================== */
 	@media only screen and (min-width: 64.063em) {
 		#main-grid {
 			grid-template-columns: repeat(12, 1fr);
-		}
-
-		.glass-container {
-			grid-column: span 12;
 		}
 	}
 </style>
