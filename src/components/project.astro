@@ -18,7 +18,6 @@ import Lightbox from "./lightbox";
 					projectKey={item.id}
 					projectCollection={item.projectImageCollection}
 				/>
-
 				<div class="project-footer">
 					<p class="hashtag">{item.projectHashTag}</p>
 					<div class="project-footer-links-container">
@@ -44,23 +43,29 @@ import Lightbox from "./lightbox";
 </section>
 
 <style>
+	/* TODO: add conditional formatting so that GitHub becomes Article Link based on #hashtag */
+
 	/* =================== constants =================== */
 	.project {
-		margin-bottom: 1rem;
+		padding: 0 1rem;
+		margin-bottom: 5rem;
 	}
 
 	.project-head {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		align-items: center;
+		align-items: start;
+		margin-bottom: 2rem;
 	}
 
 	.project-head p {
-		width: 45ch;
+		width: 35ch;
+		text-align: right;
 	}
 
 	.project-footer {
+		margin-top: 1rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -93,6 +98,11 @@ import Lightbox from "./lightbox";
 	@media only screen and (min-width: 64.063em) {
 		#projects-section {
 			grid-column: span 12;
+		}
+
+		.project-head p {
+			width: 45ch;
+			text-align: right;
 		}
 	}
 </style>

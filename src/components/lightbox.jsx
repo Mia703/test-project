@@ -9,8 +9,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom"; 
 
-
-const Image = { width: "20rem", marginRight: "200px" };
+import "./lightbox-styles.css"
 
 export default function Lightbox ({ projectKey, projectCollection }) {
 	const onInit = function response() {
@@ -32,13 +31,12 @@ export default function Lightbox ({ projectKey, projectCollection }) {
 					projectCollection.map((element) => (
 						<a
 							href={element.image}
-							className="gallery-img-link"
 						>
 							<img
 								src={element.image}
 								alt={element.alt}
 								className="gallery-img"
-								style={Image}
+							
 							/>
 						</a>
 					))

@@ -54,7 +54,7 @@ const { title, description } = Astro.props;
 
 	/* =================== font styles =================== */
 	h1 {
-		font-size: 5em;
+		font-size: 18vw;
 		font-weight: 400;
 		text-transform: uppercase;
 	}
@@ -89,14 +89,27 @@ const { title, description } = Astro.props;
 		transition: all 0.2s ease-in-out;
 	}
 
+	.hashtag {
+		background: rgba(117, 117, 117, 0.45);
+		padding: 5px;
+		border-radius: 8px;
+	}
+
 	/* =================== TABLET =================== */
 	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		h2 {
+			font-size: 2em;
+		}
+
+		h3 {
+			font-size: 1.5em;
+		}
 	}
 
 	/* =================== DESKTOP+ =================== */
 	@media only screen and (min-width: 64.063em) {
 		h1 {
-			font-size: 12em;
+			font-size: 14vw;
 		}
 
 		h2 {
@@ -105,18 +118,6 @@ const { title, description } = Astro.props;
 
 		h3 {
 			font-size: 2em;
-		}
-
-		p,
-		a,
-		footer {
-			font-size: 1em;
-		}
-
-		.hashtag {
-			background: rgba(117, 117, 117, 0.45);;
-			padding: 5px;
-			border-radius: 10px;
 		}
 	}
 </style>
