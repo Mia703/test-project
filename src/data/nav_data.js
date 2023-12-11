@@ -1,15 +1,15 @@
 const nav_data = [
 	{
-		name: 'Home',
-		path: '/',
+		name: "Home",
+		path: "/test-project/",
 	},
 	{
-		name: 'Projects',
-		path: '#project-header',
+		name: "Projects",
+		path: "#project-header",
 	},
 	{
-		name: 'About',
-		path: '/about',
+		name: "About",
+		path: "/test-project/about/",
 	},
 ]
 

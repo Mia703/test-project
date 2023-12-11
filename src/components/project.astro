@@ -13,28 +13,51 @@ import Lightbox from "./lightbox";
 					<p>{item.projectDescription}</p>
 				</div>
 
-				<Lightbox
-					client:only="react"
-					projectKey={item.id}
-					projectCollection={item.projectImageCollection}
-				/>
 				<div class="project-footer">
-					<p class="hashtag">{item.projectHashTag}</p>
+					<div class="project-footer-hashtag-container">
+						{item.projectHashTagCollection.map((element) => (
+							<p class="hashtag">{element.tag}</p>
+						))}
+					</div>
 					<div class="project-footer-links-container">
-						<a
-							href={item.projectGitLink}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							GitHub
-						</a>
-						<a
-							href={item.projectLiveLink}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Live Site
-						</a>
+						{/* If item.projectGitLink is empty (?), then display nothing (:), else ... */}
+						{item.projectGitLink == "" ? (
+							<a class="empty" />
+						) : (
+							<div>
+								{/* If the first hashtag in the collection is #Article, then display Article, else display GitHub */}
+								{item.projectHashTagCollection[0].tag == "#Article" || item.projectHashTagCollection[0].tag == "#Design" ? (
+									<a
+										href={item.projectGitLink}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Link
+									</a>
+								) : (
+									<a
+										href={item.projectGitLink}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										GitHub
+									</a>
+								)}
+							</div>
+						)}
+
+						{/* If item.projectLiveLink is empty (?), then display nothing (:), else display <a> tag*/}
+						{item.projectLiveLink == "" ? (
+							<a class="empty" />
+						) : (
+							<a
+								href={item.projectLiveLink}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Live Site
+							</a>
+						)}
 					</div>
 				</div>
 			</div>
@@ -43,9 +66,12 @@ import Lightbox from "./lightbox";
 </section>
 
 <style>
-	/* TODO: add conditional formatting so that GitHub becomes Article Link based on #hashtag */
-
 	/* =================== constants =================== */
+	.empty {
+		display: none;
+		visibility: hidden;
+	}
+
 	.project {
 		padding: 0 1rem;
 		margin-bottom: 5rem;
@@ -72,11 +98,22 @@ import Lightbox from "./lightbox";
 		align-items: end;
 	}
 
+	.project-footer-hashtag-container {
+		display: inline-flex;
+	}
+
+	.hashtag:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+
 	.project-footer-links-container {
-		min-width: 10rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+	}
+
+	.project-footer-links-container * {
+		margin-right: 0.5rem;
 	}
 
 	/* =================== media queries =================== */

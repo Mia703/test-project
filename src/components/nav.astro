@@ -5,8 +5,7 @@ import NAV_DATA from '../data/nav_data';
 <!-- Component Template (HTML & JS Expressions) -->
 <div class="navigation-container">
 	<div class="text-container">
-		<!-- FIXME: why doesn't the margin-bottom work on this? * {margin: 0} -->
-		<a href="" class="logo">Amya Moore</a>
+		<a href="/test-project/" class="logo">Amya Moore</a>
 		<p class="sub-header">Front-End Web Developer</p>
 	</div>
 
@@ -28,14 +27,18 @@ import NAV_DATA from '../data/nav_data';
 		justify-content: space-between;
 	}
 	
+	.logo {
+		border: none;
+	}
 	.sub-header {
 		text-transform: uppercase;
 	}
 
 	#navigation {
-		display: inline-flex;
+		display: flex;
+		flex-direction: row;
 		justify-content: space-evenly;
-		min-width: 30%;
+		min-width: 25%;
 	}
 
 	li {
