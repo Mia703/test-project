@@ -1,3 +1,6 @@
+
+const GENPATH = "../src/assets/"
+
 const project_data = [
 	{
 		id: 0,
@@ -12,15 +15,15 @@ const project_data = [
 			"https://mia703.github.io/FrontEnd-Mentor----Testimonials-Grid/",
 		projectImageCollection: [
 			{
-				image: "../src/assets/testimonials-1-desktop.png",
+				image: GENPATH + "testimonials-1-desktop.png",
 				alt: "Testimonial Grid Challenge - Desktop",
 			},
 			{
-				image: "../src/assets/testimonials-2-tablet.png",
+				image: GENPATH + "testimonials-2-tablet.png",
 				alt: "Testimonial Grid Challenge - Tablet",
 			},
 			{
-				image: "../src/assets/testimonials-3-mobile.png",
+				image: GENPATH + "testimonials-3-mobile.png",
 				alt: "Testimonial Grid Challenge - Mobile",
 			},
 		],
@@ -36,15 +39,15 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/FrontEnd-Mentor--News-Homepage/",
 		projectImageCollection: [
 			{
-				image: "src/assets/news-1-desktop.png",
+				image: GENPATH + "news-1-desktop.png",
 				alt: "News Homepage Challenge - Desktop",
 			},
 			{
-				image: "src/assets/news-2-tablet.png",
+				image: GENPATH + "news-2-tablet.png",
 				alt: "News Homepage Challenge - Tablet",
 			},
 			{
-				image: "src/assets/news-3-mobile.png",
+				image: GENPATH + "news-3-mobile.png",
 				alt: "News Homepage Challenge - Mobile",
 			},
 		],
@@ -61,7 +64,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: "src/assets/csdept-1-desktop.png",
+				image: GENPATH + "csdept-1-desktop.png",
 				alt: "CS Department Re-Design",
 			},
 		],
@@ -78,7 +81,7 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/UFO-Sightings/",
 		projectImageCollection: [
 			{
-				image: "src/assets/ufo-1-desktop.png",
+				image: GENPATH + "ufo-1-desktop.png",
 				alt: "UFO Sightings",
 			},
 		],
@@ -94,7 +97,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: "src/assets/vr-1.jpg",
+				image: GENPATH + "vr-1.jpg",
 				alt: "VR Headset Experience",
 			},
 		],
@@ -128,7 +131,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: "src/assets/authentic-1.jpg",
+				image: GENPATH + "authentic-1.jpg",
 				alt: "Authenticity in Korean Food",
 			},
 		],
