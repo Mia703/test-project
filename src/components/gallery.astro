@@ -7,30 +7,25 @@ const { projectImageCollection } = Astro.props;
 ---
 
 <div class="project-gallery-container">
-	<div id="gallery">
-		{
-			projectImageCollection.map((element) => (
-				<img
-					src={element.image}
-					alt={element.alt}
-					decoding="async"
-					loading="lazy"
-					class="gallery-item"
-				/>
-			))
-		}
-	</div>
+	{
+		projectImageCollection.map((element) => (
+			<img
+				src={element.image}
+				alt={element.alt}
+				decoding="async"
+				loading="lazy"
+				class="gallery-item"
+			/>
+		))
+	}
 </div>
 
 <style>
 	.project-gallery-container {
 		width: 100%;
 		height: 100%;
-	}
-
-	#gallery {
 		display: flex;
-		gap: 1rem;
+		gap: 0.5rem;
 	}
 
 	img {

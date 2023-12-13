@@ -4,46 +4,11 @@ import VideoBG from "../components/video.astro";
 import Glass from "../components/glass.astro";
 import Gradient from "../components/gradient.astro";
 import Projects from "../components/project.astro";
-import Footer from "../components/footer.astro"; 
 ---
 
 <Layout title="Amya Moore" description="Amya's personal portfolio">
-	<div id="main-grid">
-		<Glass />
-		<Projects />
-		<Footer />
-	</div>
 	<VideoBG />
+	<Glass />
 	<Gradient />
+	<Projects />
 </Layout>
-
-<style>
-	/* =================== constants =================== */
-	#main-grid {
-		display: grid;
-		gap: 10px;
-		padding: 1rem;
-	}
-
-	/* =================== media queries =================== */
-	/* =================== MOBILE =================== */
-	@media only screen and (max-width: 40em) {
-		#main-grid {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-
-	/* =================== TABLET =================== */
-	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-		#main-grid {
-			grid-template-columns: repeat(6, 1fr);
-		}
-	}
-
-	/* =================== DESKTOP =================== */
-	@media only screen and (min-width: 64.063em) {
-		#main-grid {
-			grid-template-columns: repeat(12, 1fr);
-		}
-	}
-</style>

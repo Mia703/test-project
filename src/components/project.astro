@@ -3,33 +3,33 @@ import PROJECT_DATA from "../data/project_data";
 import Gallery from "./gallery.astro";
 ---
 
-
 <section id="projects-section">
-	<h1 id="project-header">Projects</h1>
+	<h1 id="projects">Projects</h1>
 	{
 		PROJECT_DATA.map((item) => (
-			<div class="project">
-				<div class="project-head">
+			<div class="project-container">
+				<div class="project-head-container">
 					<h3>{item.projectName}</h3>
 					<p>{item.projectDescription}</p>
 				</div>
 
-				<Gallery projectImageCollection={item.projectImageCollection}/>
+				<Gallery projectImageCollection={item.projectImageCollection} />
 
-				<div class="project-footer">
-					<div class="project-footer-hashtag-container">
+				<div class="project-footer-container">
+					<div class="project-hashtag-container">
 						{item.projectHashTagCollection.map((element) => (
 							<p class="hashtag">{element.tag}</p>
 						))}
 					</div>
-					<div class="project-footer-links-container">
+					<div class="project-links-container">
 						{/* If item.projectGitLink is empty (?), then display nothing (:), else ... */}
 						{item.projectGitLink == "" ? (
 							<a class="empty" />
 						) : (
 							<div>
 								{/* If the first hashtag in the collection is #Article, then display Article, else display GitHub */}
-								{item.projectHashTagCollection[0].tag == "#Article" || item.projectHashTagCollection[0].tag == "#Design" ? (
+								{item.projectHashTagCollection[0].tag == "#Article" ||
+								item.projectHashTagCollection[0].tag == "#Design" ? (
 									<a
 										href={item.projectGitLink}
 										target="_blank"
@@ -70,67 +70,84 @@ import Gallery from "./gallery.astro";
 
 <style>
 	/* =================== constants =================== */
-	.empty {
-		display: none;
-		visibility: hidden;
+	#projects-section {
+		grid-column: span 4;
 	}
 
-	.project {
-		padding: 0 1rem;
+	.project-container {
+		width: 100%;
+		height: max-content;
+
 		margin-bottom: 5rem;
 	}
 
-	.project-head {
+	/* contains project's name and description */
+	.project-head-container {
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
+		flex-direction: column;
 		align-items: start;
-		margin-bottom: 2rem;
+
+		margin-bottom: 1rem;
 	}
 
-	.project-head p {
-		width: 35ch;
-		text-align: right;
+	.project-head-container p {
+		max-width: 35ch;
 	}
 
-	.project-footer {
+	/* contains project's hashtag and links container */
+	.project-footer-container {
 		margin-top: 1rem;
+
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: end;
 	}
 
-	.project-footer-hashtag-container {
+	/* hashtag container */
+	.project-hashtag-container {
 		display: inline-flex;
+	}
+
+	.hashtag {
+		background: rgba(117, 117, 117, 0.45);
+		padding: 5px;
+		border-radius: 8px;
 	}
 
 	.hashtag:not(:last-child) {
 		margin-right: 0.5rem;
 	}
 
-	.project-footer-links-container {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
+	/* links container */
+	.project-links-container {
+		display: inline-flex;
 	}
 
-	.project-footer-links-container * {
+	.project-links-container * {
 		margin-right: 0.5rem;
 	}
 
-	/* =================== media queries =================== */
-	/* =================== MOBILE =================== */
-	@media only screen and (max-width: 40em) {
-		#projects-section {
-			grid-column: span 4;
-		}
+	.empty {
+		display: none;
+		visibility: hidden;
 	}
+	/* =================== media queries =================== */
 
 	/* =================== TABLET =================== */
 	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
 		#projects-section {
 			grid-column: span 6;
+		}
+
+		.project-head-container {
+			flex-direction: row;
+			justify-content: space-between;
+			margin-bottom: 2rem;
+		}
+
+		.project-head-container p {
+			text-align: right;
 		}
 	}
 
@@ -140,9 +157,12 @@ import Gallery from "./gallery.astro";
 			grid-column: span 12;
 		}
 
-		.project-head p {
-			width: 45ch;
-			text-align: right;
+		.project-container {
+			padding: 0 1rem;
+		}
+
+		.project-head-container p {
+			max-width: 45ch;
 		}
 	}
 </style>
