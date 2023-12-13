@@ -1,16 +1,38 @@
 ---
-let date = new Date().getFullYear();
+let current_year = new Date().getFullYear();
 ---
 <footer class="footer-section">
-	<p>&#169 { date } Designed and developed by Amya N. Moore</p>
+	<p><span>&#169</span>{ current_year } Designed and developed by Amya N. Moore.</p>
 </footer>
 
 <style>
 	footer {
-		position: fixed;
-		left: 0;
-		bottom: 0;
 		width: 100%;
-		background-color: red;
+	}
+
+	footer p {
+		font-size: 0.8em;
+	}
+
+	/* =================== media queries =================== */
+	/* =================== MOBILE =================== */
+	@media only screen and (max-width: 40em) {
+		footer {
+			grid-column: span 4;
+		}
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		footer {
+			grid-column: span 6;
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		footer {
+			grid-column: span 12;
+		}
 	}
 </style>
