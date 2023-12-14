@@ -19,15 +19,15 @@ const project_data = [
 			"https://mia703.github.io/FrontEnd-Mentor----Testimonials-Grid/",
 		projectImageCollection: [
 			{
-				image: "../src/assets/testimonials-1-desktop.png",
+				image: "test-project/assets/testimonials-1-desktop.png",
 				alt: "Testimonial Grid Challenge - Desktop",
 			},
 			{
-				image: "../src/assets/testimonials-2-tablet.png",
+				image: "test-project/assets/testimonials-2-tablet.png",
 				alt: "Testimonial Grid Challenge - Tablet",
 			},
 			{
-				image: "../src/assets/testimonials-3-mobile.png",
+				image: "test-project/assets/testimonials-3-mobile.png",
 				alt: "Testimonial Grid Challenge - Mobile",
 			},
 		],
