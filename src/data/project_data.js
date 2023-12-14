@@ -1,3 +1,4 @@
+
 const project_data = [
 	{
 		id: 0,
@@ -16,15 +17,15 @@ const project_data = [
 			"https://mia703.github.io/FrontEnd-Mentor----Testimonials-Grid/",
 		projectImageCollection: [
 			{
-				image: "test-project/src/assets/testimonials-1-desktop.png",
+				image: "public/testimonials-1-desktop.png",
 				alt: "Testimonial Grid Challenge - Desktop",
 			},
 			{
-				image: "test-project/src/assets/testimonials-2-tablet.png",
+				image: "test-project/public/testimonials-2-tablet.png",
 				alt: "Testimonial Grid Challenge - Tablet",
 			},
 			{
-				image: "test-project/src/assets/testimonials-3-mobile.png",
+				image: "../../public/testimonials-3-mobile.png",
 				alt: "Testimonial Grid Challenge - Mobile",
 			},
 		],
@@ -44,7 +45,7 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/FrontEnd-Mentor--News-Homepage/",
 		projectImageCollection: [
 			{
-				image: "test-project/src/assets/news-1-desktop.png",
+				image: "../test-project/src/assets/news-1-desktop.png",
 				alt: "News Homepage Challenge - Desktop",
 			},
 			{
