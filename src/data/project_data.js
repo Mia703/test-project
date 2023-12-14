@@ -1,4 +1,6 @@
 
+const GENPATH = "../../public/";
+
 const project_data = [
 	{
 		id: 0,
@@ -17,15 +19,15 @@ const project_data = [
 			"https://mia703.github.io/FrontEnd-Mentor----Testimonials-Grid/",
 		projectImageCollection: [
 			{
-				image: "public/testimonials-1-desktop.png",
+				image: GENPATH + "testimonials-1-desktop.png",
 				alt: "Testimonial Grid Challenge - Desktop",
 			},
 			{
-				image: "test-project/public/testimonials-2-tablet.png",
+				image: GENPATH + "testimonials-2-tablet.png",
 				alt: "Testimonial Grid Challenge - Tablet",
 			},
 			{
-				image: "../../public/testimonials-3-mobile.png",
+				image: GENPATH + "testimonials-3-mobile.png",
 				alt: "Testimonial Grid Challenge - Mobile",
 			},
 		],
@@ -45,15 +47,15 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/FrontEnd-Mentor--News-Homepage/",
 		projectImageCollection: [
 			{
-				image: "../test-project/src/assets/news-1-desktop.png",
+				image: "../../public/news-1-desktop.png",
 				alt: "News Homepage Challenge - Desktop",
 			},
 			{
-				image: "test-project/src/assets/news-2-tablet.png",
+				image: "../../public/news-2-tablet.png",
 				alt: "News Homepage Challenge - Tablet",
 			},
 			{
-				image: "test-project/src/assets/news-3-mobile.png",
+				image: "../../public/news-3-mobile.png",
 				alt: "News Homepage Challenge - Mobile",
 			},
 		],
@@ -77,7 +79,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: "test-project/src/assets/csdept-1-desktop.png",
+				image: "public/csdept-1-desktop.png",
 				alt: "CS Department Re-Design",
 			},
 		],
@@ -101,7 +103,7 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/UFO-Sightings/",
 		projectImageCollection: [
 			{
-				image: "test-project/src/assets/ufo-1-desktop.png",
+				image: "test-project/public/ufo-1-desktop.png",
 				alt: "UFO Sightings",
 			},
 		],
@@ -124,7 +126,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: "test-project/src/assets/vr-1.jpg",
+				image: "",
 				alt: "VR Headset Experience",
 			},
 		],
@@ -168,7 +170,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: "test-project/src/assets/authentic-1.jpg",
+				image: "",
 				alt: "Authenticity in Korean Food",
 			},
 		],
