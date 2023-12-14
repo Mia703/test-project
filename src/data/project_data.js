@@ -1,5 +1,5 @@
 
-const GENPATH = "../assets/"
+const GENPATH = "../src/assets/"
 
 const project_data = [
 	{
@@ -103,7 +103,7 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/UFO-Sightings/",
 		projectImageCollection: [
 			{
-				image: "../assets/ufo-1-desktop.png",
+				image: "../src/assets/ufo-1-desktop.png",
 				alt: "UFO Sightings",
 			},
 		],
