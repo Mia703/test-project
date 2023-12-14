@@ -1,6 +1,3 @@
-
-const GENPATH = "../src/assets/"
-
 const project_data = [
 	{
 		id: 0,
@@ -47,15 +44,15 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/FrontEnd-Mentor--News-Homepage/",
 		projectImageCollection: [
 			{
-				image: GENPATH + "news-1-desktop.png",
+				image: "test-project/src/assets/news-1-desktop.png",
 				alt: "News Homepage Challenge - Desktop",
 			},
 			{
-				image: GENPATH + "news-2-tablet.png",
+				image: "test-project/src/assets/news-2-tablet.png",
 				alt: "News Homepage Challenge - Tablet",
 			},
 			{
-				image: GENPATH + "news-3-mobile.png",
+				image: "test-project/src/assets/news-3-mobile.png",
 				alt: "News Homepage Challenge - Mobile",
 			},
 		],
@@ -79,7 +76,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: "src/assets/csdept-1-desktop.png",
+				image: "test-project/src/assets/csdept-1-desktop.png",
 				alt: "CS Department Re-Design",
 			},
 		],
@@ -103,7 +100,7 @@ const project_data = [
 		projectLiveLink: "https://mia703.github.io/UFO-Sightings/",
 		projectImageCollection: [
 			{
-				image: "../src/assets/ufo-1-desktop.png",
+				image: "test-project/src/assets/ufo-1-desktop.png",
 				alt: "UFO Sightings",
 			},
 		],
@@ -126,7 +123,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: GENPATH + "vr-1.jpg",
+				image: "test-project/src/assets/vr-1.jpg",
 				alt: "VR Headset Experience",
 			},
 		],
@@ -170,7 +167,7 @@ const project_data = [
 		projectLiveLink: "",
 		projectImageCollection: [
 			{
-				image: GENPATH + "authentic-1.jpg",
+				image: "test-project/src/assets/authentic-1.jpg",
 				alt: "Authenticity in Korean Food",
 			},
 		],
