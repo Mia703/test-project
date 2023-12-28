@@ -1,0 +1,36 @@
+---
+interface Props {
+	projectImageCollection: any;
+}
+
+const { projectImageCollection } = Astro.props;
+---
+
+<div class="project-gallery-container">
+	{
+		projectImageCollection.map((element) => (
+			<img
+				src={element.image}
+				alt={element.alt}
+				decoding="async"
+				loading="lazy"
+				class="gallery-item"
+			/>
+		))
+	}
+</div>
+
+<style>
+	.project-gallery-container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		border-radius: 8px;
+	}
+</style>

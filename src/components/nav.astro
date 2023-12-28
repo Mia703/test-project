@@ -1,0 +1,51 @@
+---
+// Component Script (JavaScript)
+import NAV_DATA from '../data/nav_data';
+---
+<!-- Component Template (HTML & JS Expressions) -->
+<div class="navigation-container">
+	<div class="text-container">
+		<a href="/test-project/" class="logo">Amya Moore</a>
+		<p class="sub-header">Front-End Web Developer</p>
+	</div>
+
+	<nav id="navigation">
+		{
+			NAV_DATA.map( (item) => (
+				<li class="nav-list">
+					<a href={item.path} class="nav-link">{item.name}</a>
+				</li>
+			))
+		}
+	</nav>
+</div>
+
+
+<style>
+	.navigation-container {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.logo {
+		border: none;
+	}
+	.sub-header {
+		text-transform: uppercase;
+	}
+
+	#navigation {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		min-width: 25%;
+	}
+
+	li {
+		list-style-type: none;
+	}
+	
+	li:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+</style>
