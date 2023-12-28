@@ -1,168 +1,72 @@
 ---
-import PROJECT_DATA from "../data/project_data";
-import Gallery from "./gallery.astro";
+const { name, tag, link } = Astro.props;
 ---
 
-<section id="projects-section">
-	<h1 id="projects">Projects</h1>
-	{
-		PROJECT_DATA.map((item) => (
-			<div class="project-container">
-				<div class="project-head-container">
-					<h3>{item.projectName}</h3>
-					<p>{item.projectDescription}</p>
-				</div>
+<!-- a singluar project -->
+<a href={link} target="_blank" rel="noreferrer" class="project-link">
+	<button class="project-button">
+		<div class="project-content-container">
+			<p class="project-title">{name}</p>
+			<p class="project-tag">{tag}</p>
+		</div>
 
-				<Gallery projectImageCollection={item.projectImageCollection} />
-
-				<div class="project-footer-container">
-					<div class="project-hashtag-container">
-						{item.projectHashTagCollection.map((element) => (
-							<p class="hashtag">{element.tag}</p>
-						))}
-					</div>
-					<div class="project-links-container">
-						{/* If item.projectGitLink is empty (?), then display nothing (:), else ... */}
-						{item.projectGitLink == "" ? (
-							<a class="empty" />
-						) : (
-							<div>
-								{/* If the first hashtag in the collection is #Article, then display Article, else display GitHub */}
-								{item.projectHashTagCollection[0].tag == "#Article" ||
-								item.projectHashTagCollection[0].tag == "#Design" ? (
-									<a
-										href={item.projectGitLink}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										Link
-									</a>
-								) : (
-									<a
-										href={item.projectGitLink}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										GitHub
-									</a>
-								)}
-							</div>
-						)}
-
-						{/* If item.projectLiveLink is empty (?), then display nothing (:), else display <a> tag*/}
-						{item.projectLiveLink == "" ? (
-							<a class="empty" />
-						) : (
-							<a
-								href={item.projectLiveLink}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								Live Site
-							</a>
-						)}
-					</div>
-				</div>
-			</div>
-		))
-	}
-</section>
+		<div class="arrow-container">
+			<svg width="18" height="18" viewBox="0 0 18 18" fill="none" id="arrow">
+				<path
+					d="M5.25 12.75L12.75 5.25"
+					stroke="white"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+				<path
+					d="M5.25 5.25H12.75V12.75"
+					stroke="white"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+			</svg>
+		</div>
+	</button>
+</a>
 
 <style>
-	/* =================== constants =================== */
-	#projects-section {
-		grid-column: span 4;
-	}
-
-	.project-container {
+	.project-link {
 		width: 100%;
-		height: max-content;
-
-		margin-bottom: 5rem;
+		height: 100%;
 	}
-
-	/* contains project's name and description */
-	.project-head-container {
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-
-		margin-bottom: 1rem;
-	}
-
-	.project-head-container p {
-		max-width: 35ch;
-	}
-
-	/* contains project's hashtag and links container */
-	.project-footer-container {
-		margin-top: 1rem;
-
+	
+	button {
+		background-color: var(--main-colour-black);
+		border: 1px solid var(--main-colour-grey);
+		
+		color: var(--main-colour-white);
+		
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: end;
 	}
+	
+	button:hover {
+		border-color: var(--main-colour-white);
+	}
 
-	/* hashtag container */
-	.project-hashtag-container {
+	svg {
+		transform: scale(1.5);
+	}
+
+	path {
+		stroke: var(--main-colour-grey);
+	}
+
+	.project-content-container {
 		display: inline-flex;
+		text-align: left;
 	}
 
-	.hashtag {
-		background: rgba(117, 117, 117, 0.45);
-		padding: 5px;
-		border-radius: 8px;
+	.project-content-container *:not(:last-child) {
+		margin-right: 1rem;
 	}
 
-	.hashtag:not(:last-child) {
-		margin-right: 0.5rem;
-	}
-
-	/* links container */
-	.project-links-container {
-		display: inline-flex;
-	}
-
-	.project-links-container * {
-		margin-right: 0.5rem;
-	}
-
-	.empty {
-		display: none;
-		visibility: hidden;
-	}
-	/* =================== media queries =================== */
-
-	/* =================== TABLET =================== */
-	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-		#projects-section {
-			grid-column: span 6;
-		}
-
-		.project-head-container {
-			flex-direction: row;
-			justify-content: space-between;
-			margin-bottom: 2rem;
-		}
-
-		.project-head-container p {
-			text-align: right;
-		}
-	}
-
-	/* =================== DESKTOP =================== */
-	@media only screen and (min-width: 64.063em) {
-		#projects-section {
-			grid-column: span 12;
-		}
-
-		.project-container {
-			padding: 0 1rem;
-		}
-
-		.project-head-container p {
-			max-width: 45ch;
-		}
+	.project-tag {
+		color: var(--main-colour-grey);
 	}
 </style>
