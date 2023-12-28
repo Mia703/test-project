@@ -59,7 +59,6 @@ const {
 		background-color: var(--main-colour-black);
 		padding: 1rem;
 		position: relative;
-		cursor: none;
 	}
 
 	/* =================== font styles =================== */
@@ -81,7 +80,6 @@ const {
 	a {
 		color: var(--main-colour-white);
 		text-decoration: none;
-		cursor: none;
 	}
 
 	/* underlines text */
@@ -100,13 +98,14 @@ const {
 		font-size: 1em;
 		padding: 0.5rem;
 		border-radius: 5px;
-		cursor: none;
 
 		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		cursor: pointer;
 	}
 
 	button:hover {
 		transform: translate(0, -0.3rem) scale(1);
+		cursor: pointer;
 	}
 
 	footer p {
@@ -129,6 +128,8 @@ const {
 
 	/* =================== DESKTOP =================== */
 	@media only screen and (min-width: 64.063em) {
-	
+		body, a, button, button:hover {
+			cursor: none;
+		}
 	}
 </style>
