@@ -1,51 +1,134 @@
 ---
+import Circle from "../components/Circle.astro";
+
 interface Props {
 	title: string;
+	description: string;
+	favicon: string;
 }
 
-const { title } = Astro.props;
+const {
+	title = "Amya Moore",
+	description = "Amya's Personal Portfolio",
+	favicon = "",
+} = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<link rel="shortcut icon" href={favicon} type="image/x-icon" />
 		<title>{title}</title>
 	</head>
 	<body>
+		<Circle />
 		<slot />
 	</body>
 </html>
+
 <style is:global>
+	/* =================== imported fonts =================== */
+	@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+	/* =================== global variables =================== */
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--main-colour-black: #1f1f21;
+		--main-colour-white: #f4f4f4;
+		--main-colour-grey: #808080;
+		--main-cursor-colour: #d9d9d9;
+		--main-accent-colour-yellow: #ffc600;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+
+	/* =================== reset default styles =================== */
+	* {
+		margin: 0px;
+		padding: 0px;
+		font-size: 1em;
+		box-sizing: border-box;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	/* =================== base page styles =================== */
+	body {
+		font-family: "Inter", sans-serif;
+		font-size: 1em;
+		font-weight: 400;
+		color: var(--main-colour-white);
+		background-color: var(--main-colour-black);
+		padding: 1rem;
+		position: relative;
+		cursor: none;
+	}
+
+	/* =================== font styles =================== */
+	h1 {
+		font-size: 2.5em;
+		color: var(--main-colour-grey);
+		margin-bottom: 1rem;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+
+	p {
+		font-size: 1.2em;
+		line-height: 1.5;
+	}
+
+	a {
+		color: var(--main-colour-white);
+		text-decoration: none;
+		cursor: none;
+	}
+
+	/* underlines text */
+	.em {
+		border-bottom: solid 2px var(--main-colour-white);
+		transition: border 200ms ease-in-out;
+	}
+
+	.em:hover {
+		border-color: var(--main-accent-colour-yellow);
+	}
+
+	button {
+		width: 100%;
+		font-weight: 400;
+		font-size: 1em;
+		padding: 0.5rem;
+		border-radius: 5px;
+		cursor: none;
+
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	button:hover {
+		transform: translate(0, -0.3rem) scale(1);
+	}
+
+	footer p {
+		font-size: 0.8em;
+	}
+
+	/* =================== constants =================== */
+
+	/* exclude the first two sections, but include for all other sections */
+	section:not(.header-section, .about-section) {
+		margin-top: 3rem;
+	}
+
+	/* =================== media queries =================== */
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+	
 	}
 </style>

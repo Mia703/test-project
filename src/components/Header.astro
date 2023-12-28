@@ -1,0 +1,36 @@
+---
+
+---
+
+<section class="header-section">
+	<h2>
+		Amya Moore. Junior Front-End Web Developer. Currently based in Denver,
+		Colorado but looking worldwide.
+	</h2>
+</section>
+
+<style>
+	.header-section {
+		grid-column: span 4;
+		height: 70vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		.header-section {
+			grid-column: span 6;
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		.header-section {
+			grid-column: 3 / 11;
+		}
+	}
+</style>

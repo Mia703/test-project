@@ -1,0 +1,93 @@
+---
+import EXPERIENCE from "../data/experience.js";
+---
+
+<section class="experience-container">
+	<h1 id="exp">Experience</h1>
+	<div class="experience-grid">
+		{
+			EXPERIENCE.map((item) => (
+				<div class="position-item">
+					<p class="position-name">{item.position}</p>
+					<p class="position-company">{item.company}</p>
+					<p class="position-date">{item.date}</p>
+				</div>
+			))
+		}
+	</div>
+	<a href="">
+		<button>See Full Resume <span>&#8594;</span></button>
+	</a>
+</section>
+
+<style>
+	.experience-container {
+		grid-column: span 4;
+	}
+
+	.experience-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+
+	.position-item {
+		margin-bottom: 1rem;
+	}
+
+	.position-name {
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+	.position-company {
+		font-size: 0.9em;
+	}
+
+	.position-date {
+		font-size: 0.8em;
+		text-transform: uppercase;
+	}
+
+	button {
+		text-transform: uppercase;
+		background-color: var(--main-colour-white);
+		border: none;
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		.experience-container {
+			grid-column: span 6;
+		}
+
+		.experience-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		.experience-container {
+			grid-column: 2 / 12;
+		}
+
+		.experience-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.position-name {
+			font-size: 1.2em;
+			font-weight: 600;
+		}
+
+		.position-company {
+			font-size: 1em;
+		}
+
+		.position-date {
+			font-size: 0.9em;
+			text-transform: uppercase;
+		}
+	}
+</style>

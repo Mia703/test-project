@@ -1,0 +1,42 @@
+---
+import PROJECT_DATA from "../data/projects.js";
+import Project from "./Project.astro";
+---
+
+<!-- the project's container -->
+<section class="project-section">
+	<h1 id="projects">Selected Projects</h1>
+	<div class="project-container">
+		{
+			PROJECT_DATA.map((item) => (
+				<Project name={item.name} tag={item.tag} link={item.link} />
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.project-section {
+		grid-column: span 4;
+	}
+
+	.project-container {
+		display: grid;
+		grid-auto-rows: auto;
+		gap: 1rem;
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		.project-section {
+			grid-column: span 6;
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		.project-section {
+			grid-column: 2 / 12;
+		}
+	}
+</style>

@@ -1,0 +1,104 @@
+---
+import NAVIGATION_DATA from "../data/navigation.js";
+
+let line_height = 5;
+let line_width = 20;
+---
+
+<div class="navigation-container">
+	<a href="/" id="logo">ANM</a>
+
+	<div class="navigation-container mobile">
+		<svg viewBox="0 0 100 80" width="40" height="40" id="hamburger">
+			<rect width="100" height={line_height}></rect>
+			<rect y={line_width} width="100" height={line_height}></rect>
+			<rect y={line_width * 2} width="100" height={line_height}></rect>
+		</svg>
+	</div>
+
+	<div class="navigation-container desktop">
+		<ul class="nav-list">
+			{
+				NAVIGATION_DATA.map((item) => (
+					<li class="nav-item em">
+						<a href={item.path}>{item.name}</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>
+
+<style>
+	/* ---------- font styles ---------- */
+	a {
+		text-decoration: none;
+	}
+
+	li {
+		margin-right: 1rem;
+	}
+
+	/* ---------- mobile ---------- */
+	.navigation-container {
+		grid-column: span 4;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: start;
+	}
+
+	.navigation-container.desktop {
+		display: none;
+		visibility: hidden;
+	}
+
+	#hamburger {
+		stroke: var(--main-colour-white);
+		fill: var(--main-colour-white);
+	}
+
+	.nav-list {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	.nav-item {
+		list-style: none;
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		.navigation-container {
+			grid-column: span 6;
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		.navigation-container {
+			grid-column: span 12;
+		}
+
+		.navigation-container.mobile {
+			display: none;
+			visibility: hidden;
+		}
+		.navigation-container.desktop {
+			grid-column: span 12;
+			display: block;
+			visibility: visible;
+		}
+	}
+</style>
+
+<script>
+	const modal = document.getElementById("modal-container");
+	const hamburger = document.getElementById("hamburger");
+
+	// hamburger onclick, display modal
+	hamburger.addEventListener("click", function () {
+		modal.style.display = "block";
+	});
+</script>
