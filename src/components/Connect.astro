@@ -1,0 +1,35 @@
+---
+let linkedin_href = "";
+let email = "mailto:amya.nicole.moore@gmail.com?subject=Say Hello!!!";
+---
+
+<section class="connect-container">
+	<h1 id="connect">Let's Connect!</h1>
+	<p>
+		You can find me on <a href={linkedin_href} class="em">LinkedIn</a> or drop
+		me an <a href={email} class="em">email</a>. I bring a lot to the table and
+		am always eager to learn. While I'm currently seeking remote full-time
+		opportunitites, I am looking to expand my search globally in the near
+		future.
+	</p>
+</section>
+
+<style>
+	.connect-container {
+		grid-column: span 4;
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		.connect-container {
+			grid-column: span 6;
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		.connect-container {
+			grid-column: 2 / 12;
+		}
+	}
+</style>

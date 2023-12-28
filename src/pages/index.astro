@@ -1,14 +1,44 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import VideoBG from "../components/video.astro";
-import Glass from "../components/glass.astro";
-import Gradient from "../components/gradient.astro";
-import Projects from "../components/project.astro";
+import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
+import About from "../components/About.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Experience from "../components/Experience.astro";
+import Connect from "../components/Connect.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Amya Moore" description="Amya's personal portfolio">
-	<VideoBG />
-	<Glass />
-	<Gradient />
-	<Projects />
+<Layout title="Amya Moore" description="Amya's Personal Portfolio" favicon="">
+	<main>
+		<Navigation />
+		<Header />
+		<About />
+		<Portfolio />
+		<Experience />
+		<Connect />
+		<Footer />
+	</main>
 </Layout>
+
+<style>
+	/* =================== media queries =================== */
+	main {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
+	}
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		main {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		main {
+			grid-template-columns: repeat(12, 1fr);
+		}
+	}
+</style>

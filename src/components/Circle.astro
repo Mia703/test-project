@@ -1,0 +1,80 @@
+---
+
+---
+
+<div id="circle"></div>
+
+<style>
+	#circle {
+		position: fixed;
+		z-index: 1;
+
+		width: 32px;
+		height: 32px;
+
+		background-color: var(--main-cursor-colour);
+		mix-blend-mode: difference;
+		border-radius: 50%;
+
+		/* starts at an even speed and then accelerates until the transition ends */
+		transition:
+			500ms cubic-bezier(0, 0, 0.25, 1),
+			transform 80ms linear;
+		transform: translate3d(0, 0, 0);
+		pointer-events: none;
+
+		display: none;
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		#circle {
+			display: block;
+		}
+	}
+</style>
+
+<script>
+	const circle = document.getElementById("circle");
+
+	function handleMouseMove(e) {
+		let top = e.clientY - circle.clientHeight / 2;
+		let left = e.clientX - circle.clientWidth / 2;
+
+		circle.style.top = top + "px";
+		circle.style.left = left + "px";
+	}
+
+	window.addEventListener("mousemove", handleMouseMove);
+
+	/* diff between clientHeight and offsetHeight: https://stackoverflow.com/questions/4106538/difference-between-offsetheight-and-clientheight  */
+
+	// document.addEventListener ('mousemove', (e) => {
+	//     window.requestAnimationFrame( () => {
+	//         circle.style.top = `${e.clientY - circle.offsetHeight / 2}px`;
+	//         circle.style.left = `${e.clientX - circle.offsetWidth / 2}px`;
+	//     });
+	// });
+
+	// wait for all a tags to load on page
+	window.addEventListener("load", function () {
+		// selet all html elements with href attribute
+		const all_a_elements = document.querySelectorAll("[href]");
+
+		// what happens when the mouse is over the element
+		function handleMouseOver() {
+			circle.style.transform = "scale(2)";
+		}
+
+		// what happens when the mouse leaves the element
+		function handleMouseLeave() {
+			circle.style.transform = "scale(1)";
+		}
+
+		// for each (all) a tags, on mouse-over and mouse-leave, do funct.
+		all_a_elements.forEach((item) => {
+			item.addEventListener("mouseover", handleMouseOver);
+			item.addEventListener("mouseout", handleMouseLeave);
+		});
+	});
+</script>
