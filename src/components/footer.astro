@@ -6,15 +6,37 @@ const date = new Date().getFullYear();
 	<p>
 		<span>&#169</span>
 		{date} to {date}. Designed and developed by Amya Moore. All rights reserved.
+		<div class="license">
+			<p>
+				Licensed under
+				<a
+					href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+					target="_blank"
+					rel="license noopener noreferrer"
+					class="em"
+					>Attribution-NonCommercial-ShareAlike 4.0 International
+				</a>
+			</p>
+		</div>
 	</p>
 </footer>
 
 <style>
 	footer {
 		grid-column: span 4;
-		margin-top: 1rem;
+		margin-top: 3rem;
 		text-transform: capitalize;
 		text-align: center;
+		color: var(--main-colour-grey);
+	}
+
+	.license {
+		font-size: 0.8em;
+		color: var(--main-colour-grey);
+	}
+
+	.license a {
+		color: var(--main-colour-grey);
 	}
 
 	/* =================== TABLET =================== */

@@ -25,6 +25,6 @@ const work_history_list = [
 	},
 ];
 
-const most_recent_positions = work_history_list.slice(0, 3);
+const most_recent_positions = work_history_list.slice(0, 4);
 
 export default most_recent_positions;

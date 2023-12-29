@@ -8,13 +8,13 @@ let line_width = 20;
 <div class="navigation-container">
 	<a href="/test-project/" id="logo">ANM</a>
 
-	<button class="navigation-button mobile">
+	<!-- <button class="navigation-button mobile">
 		<svg viewBox="0 0 100 80" width="40" height="40" id="hamburger">
 			<rect width="100" height={line_height}></rect>
 			<rect y={line_width} width="100" height={line_height}></rect>
 			<rect y={line_width * 2} width="100" height={line_height}></rect>
 		</svg>
-	</button>
+	</button> -->
 
 	<div class="navigation-container desktop">
 		<ul class="nav-list">
@@ -103,19 +103,3 @@ let line_width = 20;
 		}
 	}
 </style>
-
-<script>
-	const modal = document.getElementById("modal-container");
-	const hamburger = document.getElementById("hamburger");
-	const menu_items = document.querySelectorAll('nav-link');
-	// TODO: how do i get this modal to appear and disappear?
-	// hamburger.addEventListener("click", function () {
-	// 	// alert(window.getComputedStyle(modal).display);
-	// 	if (window.getComputedStyle(modal).display == "none") {
-	// 		// alert('hidden');
-	// 		modal.style.display = "block";
-	// 	} else {
-	// 		modal.style.display = "none";
-	// 	}
-	// });
-</script>
