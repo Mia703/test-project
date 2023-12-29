@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Modal from "../components/Modal.astro";
 import Navigation from "../components/Navigation.astro";
 import Header from "../components/Header.astro";
 import About from "../components/About.astro";
@@ -11,6 +12,7 @@ import Footer from "../components/Footer.astro";
 
 <Layout title="Amya Moore" description="Amya's Personal Portfolio" favicon="">
 	<main>
+		<Modal />
 		<Navigation />
 		<Header />
 		<About />
@@ -29,7 +31,7 @@ import Footer from "../components/Footer.astro";
 		gap: 10px;
 	}
 	/* =================== TABLET =================== */
-	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	@media only screen and (min-width: 40.063em) {
 		main {
 			grid-template-columns: repeat(6, 1fr);
 		}

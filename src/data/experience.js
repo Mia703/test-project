@@ -7,7 +7,7 @@ const work_history_list = [
 	},
 	{
 		key: 2,
-		position: "IT and CRM Assistant",
+		position: "IT and Salesforce CRM Assistant",
 		company: "Higher Education Resource Services (HERS)",
 		date: "September 2023 - Present",
 	},

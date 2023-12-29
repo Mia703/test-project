@@ -1,0 +1,61 @@
+---
+import NAVIGATION_DATA from "../data/navigation.js";
+---
+
+<div id="modal-container">
+	<div class="modal">
+		<ul class="nav-list">
+			{
+				NAVIGATION_DATA.map((item) => (
+					<li class="nav-item">
+						<a href={item.path} class="nav-link mobile">
+							{item.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>
+
+<style>
+	#modal-container {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100vh;
+		background-color: var(--main-colour-grey);
+		padding: 1rem;
+		border-radius: 5px 0 0 5px;
+		display: none;
+	}
+
+	.nav-item {
+		list-style: none;
+	}
+
+	.nav-link.mobile {
+		font-size: 4em;
+		color: var(--main-colour-black);
+		font-weight: 600;
+	}
+
+	/* =================== TABLET =================== */
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	}
+
+	/* =================== DESKTOP =================== */
+	@media only screen and (min-width: 64.063em) {
+		#modal-container {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+<script>
+	window.addEventListener('load', function () {
+
+	
+	})
+</script>

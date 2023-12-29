@@ -1,5 +1,9 @@
 const navigation_data = [
 	{
+		name: "Home",
+		path: "/test-project/"
+	},
+	{
 		name: "About",
 		path: "#about",
 	},

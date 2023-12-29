@@ -6,22 +6,24 @@ let line_width = 20;
 ---
 
 <div class="navigation-container">
-	<a href="/" id="logo">ANM</a>
+	<a href="/test-project/" id="logo">ANM</a>
 
-	<div class="navigation-container mobile">
+	<button class="navigation-button mobile">
 		<svg viewBox="0 0 100 80" width="40" height="40" id="hamburger">
 			<rect width="100" height={line_height}></rect>
 			<rect y={line_width} width="100" height={line_height}></rect>
 			<rect y={line_width * 2} width="100" height={line_height}></rect>
 		</svg>
-	</div>
+	</button>
 
 	<div class="navigation-container desktop">
 		<ul class="nav-list">
 			{
 				NAVIGATION_DATA.map((item) => (
 					<li class="nav-item em">
-						<a href={item.path}>{item.name}</a>
+						<a href={item.path} class="nav-link desktop">
+							{item.name}
+						</a>
 					</li>
 				))
 			}
@@ -42,24 +44,30 @@ let line_width = 20;
 	/* ---------- mobile ---------- */
 	.navigation-container {
 		grid-column: span 4;
+
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: start;
 	}
 
-	.navigation-container.mobile:hover {
-		cursor: pointer;
-	}
-
-	.navigation-container.desktop {
-		display: none;
-		visibility: hidden;
+	.navigation-button {
+		width: min-content;
+		height: min-content;
+		background-color: var(--main-colour-black);
+		border: none;
+		transition: none;
+		transform: none;
 	}
 
 	#hamburger {
 		stroke: var(--main-colour-white);
 		fill: var(--main-colour-white);
+	}
+
+	.desktop {
+		display: none;
+		visibility: hidden;
 	}
 
 	.nav-list {
@@ -71,9 +79,8 @@ let line_width = 20;
 	.nav-item {
 		list-style: none;
 	}
-
 	/* =================== TABLET =================== */
-	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	@media only screen and (min-width: 40.063em) {
 		.navigation-container {
 			grid-column: span 6;
 		}
@@ -85,12 +92,12 @@ let line_width = 20;
 			grid-column: span 12;
 		}
 
-		.navigation-container.mobile {
+		.mobile {
 			display: none;
 			visibility: hidden;
 		}
-		.navigation-container.desktop {
-			grid-column: span 12;
+
+		.desktop {
 			display: block;
 			visibility: visible;
 		}
@@ -100,9 +107,15 @@ let line_width = 20;
 <script>
 	const modal = document.getElementById("modal-container");
 	const hamburger = document.getElementById("hamburger");
-
-	// hamburger onclick, display modal
-	hamburger.addEventListener("click", function () {
-		modal.style.display = "block";
-	});
+	const menu_items = document.querySelectorAll('nav-link');
+	// TODO: how do i get this modal to appear and disappear?
+	// hamburger.addEventListener("click", function () {
+	// 	// alert(window.getComputedStyle(modal).display);
+	// 	if (window.getComputedStyle(modal).display == "none") {
+	// 		// alert('hidden');
+	// 		modal.style.display = "block";
+	// 	} else {
+	// 		modal.style.display = "none";
+	// 	}
+	// });
 </script>

@@ -32,21 +32,36 @@ const { name, tag, link } = Astro.props;
 		width: 100%;
 		height: 100%;
 	}
-	
-	button {
+
+	.project-content-container {
+		text-align: left;
+	}
+
+	.project-button {
 		background-color: var(--main-colour-black);
 		border: 1px solid var(--main-colour-grey);
-		
+
 		color: var(--main-colour-white);
-		
+
+		display: grid;
+		grid-template-columns: 1fr 0.2fr;
+		min-height: 100%;
+	}
+
+	.project-button:hover {
+		border-color: var(--main-accent-colour-yellow);
+	}
+
+	.project-tag {
+		font-size: 1em;
+		color: var(--main-colour-grey);
+	}
+
+	.arrow-container {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
-		align-items: end;
-	}
-	
-	button:hover {
-		border-color: var(--main-colour-white);
+		justify-content: center;
+		align-items: center;
 	}
 
 	svg {
@@ -55,18 +70,5 @@ const { name, tag, link } = Astro.props;
 
 	path {
 		stroke: var(--main-colour-grey);
-	}
-
-	.project-content-container {
-		display: inline-flex;
-		text-align: left;
-	}
-
-	.project-content-container *:not(:last-child) {
-		margin-right: 1rem;
-	}
-
-	.project-tag {
-		color: var(--main-colour-grey);
 	}
 </style>

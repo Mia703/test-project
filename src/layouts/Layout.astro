@@ -1,5 +1,4 @@
 ---
-
 import Circle from "../components/Circle.astro";
 
 interface Props {
@@ -62,6 +61,7 @@ const {
 		background-color: var(--main-colour-black);
 		padding: 1rem;
 		position: relative;
+		scroll-behavior: smooth;
 	}
 
 	/* =================== font styles =================== */
@@ -87,7 +87,7 @@ const {
 
 	/* underlines text */
 	.em {
-		border-bottom: solid 2px var(--main-colour-white);
+		border-bottom: solid 2px var(--main-colour-grey);
 		transition: border 200ms ease-in-out;
 	}
 
@@ -125,7 +125,7 @@ const {
 	/* =================== media queries =================== */
 
 	/* =================== TABLET =================== */
-	@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	@media only screen and (min-width: 40.063em) {
 	
 	}
 
