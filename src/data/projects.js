@@ -3,7 +3,7 @@ const projects_list = [
 		key: 0,
 		name: "Digital Marketing",
 		tag: "Figma",
-		link: "https://www.figma.com/file/Zu124QeUExsqOQbnNhOYVX/DU-%26-VMC-Style-Guide?type=design&node-id=0%3A1&mode=design&t=eSpn31xnxCllYs8e-1",
+		link: "https://www.figma.com/file/Zu124QeUExsqOQbnNhOYVX/DU-%26-VMC-Digital-Signage-Workspace?type=design&node-id=317%3A2&mode=design&t=6tBqfkFQNPjxaEFD-1",
 	},
 	{
 		key: 1,
