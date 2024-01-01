@@ -20,7 +20,7 @@
 		transition:
 			500ms cubic-bezier(0, 0, 0.25, 1),
 			transform 80ms linear;
-		/* transform: translate3d(0, 0, 0); */
+
 		pointer-events: none;
 
 		display: none;
@@ -64,8 +64,11 @@
 
 		// for each (all) a tags, on mouse-over and mouse-leave, do funct.
 		all_a_elements.forEach((item) => {
-			item.addEventListener("mouseover", handleMouseOver);
-			item.addEventListener("mouseout", handleMouseLeave);
+			// mouseover/out vs mouseenter/leave
+			// mouseover/out may have browser compatibility issues
+			// we'll see if this is true...
+			item.addEventListener("mouseenter", handleMouseOver);
+			item.addEventListener("mouseleave", handleMouseLeave);
 		});
 	});
 </script>
